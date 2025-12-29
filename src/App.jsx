@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from './components/ui/Navbar';
 import StarsCanvas from './components/canvas/Stars';
 import Hero from './components/sections/Hero';
@@ -27,6 +28,7 @@ const App = () => {
         </div>
 
         <Footer />
+        <SpeedInsights />
       </div>
     </BrowserRouter>
   );
