@@ -17,6 +17,10 @@ const navLinks = [
         title: "Projects",
     },
     {
+        id: "blog",
+        title: "Blog",
+    },
+    {
         id: "contact",
         title: "Contact",
     },
@@ -38,9 +42,35 @@ const Navbar = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
-
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    // Function to handle navigation for blog
+    const handleBlogClick = () => {
+        setActive("Blog");
+        // If you're using a separate blog page, use:
+        // window.open("https://ishwarawasthi.com.np/blog", "_self");
+        // If you're using a blog section in the same page:
+        // document.getElementById("blog").scrollIntoView({ behavior: "smooth" });
+    };
+
+    // Function to handle CV download
+    const handleDownloadCV = () => {
+        // Replace with your actual CV URL
+        const cvUrl = "/path-to-your-cv.pdf";
+        const link = document.createElement("a");
+        link.href = cvUrl;
+        link.download = "Ishwar_Awasthi_CV.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    // Function to handle hire me click
+    const handleHireMe = () => {
+        setActive("");
+        document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
         <nav
@@ -59,7 +89,7 @@ const Navbar = () => {
                 >
                     <p className='text-white text-[18px] font-bold cursor-pointer flex'>
                         Ishwar&nbsp;
-                        <span className='sm:block hidden'> | Awasthi</span>
+                        <span className='sm:block hidden'>Awasthi</span>
                     </p>
                 </Link>
 
@@ -71,18 +101,47 @@ const Navbar = () => {
                                 key={nav.id}
                                 className={`${active === nav.title ? "text-white" : "text-secondary"
                                     } hover:text-white text-[18px] font-medium cursor-pointer transition-colors`}
-                                onClick={() => setActive(nav.title)}
+                                onClick={() => {
+                                    if (nav.id === "blog") {
+                                        handleBlogClick();
+                                    } else {
+                                        setActive(nav.title);
+                                        if (nav.id !== "blog") {
+                                            document.getElementById(nav.id)?.scrollIntoView({ behavior: "smooth" });
+                                        }
+                                    }
+                                }}
                             >
-                                <a href={`#${nav.id}`}>{nav.title}</a>
+                                {nav.id === "blog" ? (
+                                    <a 
+                                        href="https://ishwarawasthi.com.np/blog" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-1"
+                                    >
+                                        {nav.title}
+                                        <span className="text-xs bg-gradient-to-r from-violet-600 to-indigo-600 px-2 py-0.5 rounded-full ml-1">
+                                            New
+                                        </span>
+                                    </a>
+                                ) : (
+                                    <a href={`#${nav.id}`}>{nav.title}</a>
+                                )}
                             </li>
                         ))}
                     </ul>
 
                     <div className="flex gap-4">
-                        <button className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-6 py-2 rounded-full font-medium shadow-md hover:shadow-xl hover:scale-105 transition-all text-[16px]">
+                        <button 
+                            onClick={handleHireMe}
+                            className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-6 py-2 rounded-full font-medium shadow-md hover:shadow-xl hover:scale-105 transition-all text-[16px]"
+                        >
                             Hire Me
                         </button>
-                        <button className="border border-white/20 text-white px-6 py-2 rounded-full font-medium hover:bg-white/10 transition-all text-[16px]">
+                        <button 
+                            onClick={handleDownloadCV}
+                            className="border border-white/20 text-white px-6 py-2 rounded-full font-medium hover:bg-white/10 transition-all text-[16px]"
+                        >
                             CV
                         </button>
                     </div>
@@ -109,18 +168,49 @@ const Navbar = () => {
                                         }`}
                                     onClick={() => {
                                         setToggle(!toggle);
-                                        setActive(nav.title);
+                                        if (nav.id === "blog") {
+                                            handleBlogClick();
+                                        } else {
+                                            setActive(nav.title);
+                                            if (nav.id !== "blog") {
+                                                document.getElementById(nav.id)?.scrollIntoView({ behavior: "smooth" });
+                                            }
+                                        }
                                     }}
                                 >
-                                    <a href={`#${nav.id}`}>{nav.title}</a>
+                                    {nav.id === "blog" ? (
+                                        <a 
+                                            href="https://ishwarawasthi.com.np/blog" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-1"
+                                        >
+                                            {nav.title}
+                                            <span className="text-xs bg-gradient-to-r from-violet-600 to-indigo-600 px-2 py-0.5 rounded-full ml-1">
+                                                New
+                                            </span>
+                                        </a>
+                                    ) : (
+                                        <a href={`#${nav.id}`}>{nav.title}</a>
+                                    )}
                                 </li>
                             ))}
                             <li className="w-full h-[1px] bg-white/10 my-1"></li>
                             <li>
-                                <button className="text-white w-full text-left text-[16px] font-medium text-secondary hover:text-white">Hire Me</button>
+                                <button 
+                                    onClick={handleHireMe}
+                                    className="text-white w-full text-left text-[16px] font-medium text-secondary hover:text-white"
+                                >
+                                    Hire Me
+                                </button>
                             </li>
                             <li>
-                                <button className="text-white w-full text-left text-[16px] font-medium text-secondary hover:text-white">Download CV</button>
+                                <button 
+                                    onClick={handleDownloadCV}
+                                    className="text-white w-full text-left text-[16px] font-medium text-secondary hover:text-white"
+                                >
+                                    Download CV
+                                </button>
                             </li>
                         </ul>
                     </div>
