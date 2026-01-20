@@ -5,6 +5,7 @@ import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Experience from './components/sections/Experience';
 import Works from './components/sections/Works';
+import BlogSection from './components/sections/BlogSection'; // New Blog section
 import Contact from './components/sections/Contact';
 import Footer from './components/ui/Footer';
 
@@ -20,6 +21,7 @@ const App = () => {
         <About />
         <Experience />
         <Works />
+        <BlogSection /> {/* Add Blog section */}
         <Contact />
         <StarsCanvas />
 
