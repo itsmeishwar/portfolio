@@ -113,17 +113,15 @@ const Navbar = () => {
                                 }}
                             >
                                 {nav.id === "blog" ? (
-                                    <a 
-                                        href="https://ishwarawasthi.com.np/blog" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
+                                    <Link
+                                        to="/blog"
                                         className="flex items-center gap-1"
                                     >
                                         {nav.title}
                                         <span className="text-xs bg-gradient-to-r from-violet-600 to-indigo-600 px-2 py-0.5 rounded-full ml-1">
                                             New
                                         </span>
-                                    </a>
+                                    </Link>
                                 ) : (
                                     <a href={`#${nav.id}`}>{nav.title}</a>
                                 )}
@@ -132,13 +130,13 @@ const Navbar = () => {
                     </ul>
 
                     <div className="flex gap-4">
-                        <button 
+                        <button
                             onClick={handleHireMe}
                             className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-6 py-2 rounded-full font-medium shadow-md hover:shadow-xl hover:scale-105 transition-all text-[16px]"
                         >
                             Hire Me
                         </button>
-                        <button 
+                        <button
                             onClick={handleDownloadCV}
                             className="border border-white/20 text-white px-6 py-2 rounded-full font-medium hover:bg-white/10 transition-all text-[16px]"
                         >
@@ -179,17 +177,15 @@ const Navbar = () => {
                                     }}
                                 >
                                     {nav.id === "blog" ? (
-                                        <a 
-                                            href="https://ishwarawasthi.com.np/blog" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
+                                        <Link
+                                            to="/blog"
                                             className="flex items-center gap-1"
                                         >
                                             {nav.title}
                                             <span className="text-xs bg-gradient-to-r from-violet-600 to-indigo-600 px-2 py-0.5 rounded-full ml-1">
                                                 New
                                             </span>
-                                        </a>
+                                        </Link>
                                     ) : (
                                         <a href={`#${nav.id}`}>{nav.title}</a>
                                     )}
@@ -197,7 +193,7 @@ const Navbar = () => {
                             ))}
                             <li className="w-full h-[1px] bg-white/10 my-1"></li>
                             <li>
-                                <button 
+                                <button
                                     onClick={handleHireMe}
                                     className="text-white w-full text-left text-[16px] font-medium text-secondary hover:text-white"
                                 >
@@ -205,7 +201,7 @@ const Navbar = () => {
                                 </button>
                             </li>
                             <li>
-                                <button 
+                                <button
                                     onClick={handleDownloadCV}
                                     className="text-white w-full text-left text-[16px] font-medium text-secondary hover:text-white"
                                 >
