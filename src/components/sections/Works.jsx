@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { styles } from "../../styles";
 import { SectionWrapper } from "../../hoc";
 import { fadeIn, textVariant } from "../../utils/motion";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
+const ProjectCard = ({ index, name, description, tags, image, source_code_link, live_demo_link }) => {
     return (
         <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
             <Tilt
@@ -15,37 +15,47 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
                     scale: 1,
                     speed: 450,
                 }}
-                className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+                className='bg-white dark:bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full shadow-lg hover:shadow-2xl transition-shadow duration-300'
             >
-                <div className='relative w-full h-[230px]'>
-                    <div className="w-full h-full bg-indigo-900 rounded-2xl flex items-center justify-center text-white font-bold text-xl relative overflow-hidden group">
-                        {/* Placeholder for image */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-violet-600 to-indigo-900 opacity-80 group-hover:opacity-100 transition-opacity" />
-                        <span className="relative z-10">{name} Image</span>
+                <div className='relative w-full h-[230px] group'>
+                    <div className="w-full h-full rounded-2xl flex items-center justify-center text-white font-bold text-xl relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-600">
+                        {/* Enhanced gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-violet-600/90 via-purple-600/90 to-indigo-600/90 group-hover:opacity-70 transition-opacity duration-300" />
+                        <span className="relative z-10 text-2xl font-black">{name}</span>
                     </div>
-                    <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
+
+                    {/* Action Buttons */}
+                    <div className='absolute inset-0 flex justify-end items-start m-3 gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                         <div
                             onClick={() => window.open(source_code_link, "_blank")}
-                            className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+                            className='bg-black/80 backdrop-blur-sm w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:bg-black transition-colors'
                         >
-                            <FaGithub className='w-1/2 h-1/2 object-contain' />
+                            <FaGithub className='w-5 h-5 text-white' />
                         </div>
+                        {live_demo_link && (
+                            <div
+                                onClick={() => window.open(live_demo_link, "_blank")}
+                                className='bg-violet-600/80 backdrop-blur-sm w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:bg-violet-600 transition-colors'
+                            >
+                                <FaExternalLinkAlt className='w-4 h-4 text-white' />
+                            </div>
+                        )}
                     </div>
                 </div>
 
                 <div className='mt-5'>
                     <h3 className='text-gray-900 dark:text-white font-bold text-[24px]'>{name}</h3>
-                    <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+                    <p className='mt-2 text-secondary text-[14px] leading-relaxed'>{description}</p>
                 </div>
 
                 <div className='mt-4 flex flex-wrap gap-2'>
                     {tags.map((tag) => (
-                        <p
+                        <span
                             key={`${name}-${tag.name}`}
-                            className={`text-[14px] ${tag.color}`}
+                            className={`text-[12px] font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${tag.color} text-white`}
                         >
                             #{tag.name}
-                        </p>
+                        </span>
                     ))}
                 </div>
             </Tilt>
