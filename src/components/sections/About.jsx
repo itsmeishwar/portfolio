@@ -21,7 +21,7 @@ const ServiceCard = ({ index, title, icon }) => (
                 className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
             >
                 {/* <img src={icon} alt='web-development' className='w-16 h-16 object-contain' /> */}
-                <h3 className='text-white text-[20px] font-bold text-center'>
+                <h3 className='text-gray-900 dark:text-white text-[20px] font-bold text-center'>
                     {title}
                 </h3>
             </div>
@@ -51,15 +51,15 @@ const About = () => {
             {/* Stats Counter */}
             <div className="mt-10 flex gap-10 flex-wrap">
                 <div>
-                    <h3 className="text-white text-[30px] font-bold">2+</h3>
+                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold">2+</h3>
                     <p className="text-secondary">Years Experience</p>
                 </div>
                 <div>
-                    <h3 className="text-white text-[30px] font-bold">10+</h3>
+                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold">10+</h3>
                     <p className="text-secondary">Projects Completed</p>
                 </div>
                 <div>
-                    <h3 className="text-white text-[30px] font-bold">5+</h3>
+                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold">5+</h3>
                     <p className="text-secondary">Happy Clients</p>
                 </div>
             </div>
