@@ -1,14 +1,40 @@
 @import "tailwindcss";
 
-@theme {
-  --color-primary: #050816;
-  --color-secondary: #aaa6c3;
-  --color-tertiary: #151030;
-  --color-black-100: #100d25;
-  --color-black-200: #090325;
-  --color-white-100: #f3f3f3;
+:root {
+  /* Light Mode Defaults */
+  --primary: #ffffff;
+  --secondary: #4b5563; /* Gray-600 */
+  --tertiary: #f3f4f6;  /* Gray-100 */
+  --black-100: #e5e7eb; /* Gray-200 */
+  --black-200: #d1d5db; /* Gray-300 */
+  --white-100: #1f2937; /* Gray-800 */
+  --card-shadow: 0px 35px 120px -15px rgba(0, 0, 0, 0.1);
+  
+  color-scheme: light;
+}
 
-  --shadow-card: 0px 35px 120px -15px #211e35;
+:root.dark {
+  /* Dark Mode Defaults */
+  --primary: #050816;
+  --secondary: #aaa6c3;
+  --tertiary: #151030;
+  --black-100: #100d25;
+  --black-200: #090325;
+  --white-100: #f3f3f3;
+  --card-shadow: 0px 35px 120px -15px #211e35;
+
+  color-scheme: dark;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-black-100: var(--black-100);
+  --color-black-200: var(--black-200);
+  --color-white-100: var(--white-100);
+
+  --shadow-card: var(--card-shadow);
 
   --breakpoint-xs: 450px;
 }
@@ -16,7 +42,6 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
     font-family: "Poppins", sans-serif;
   }
 }
