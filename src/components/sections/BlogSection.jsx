@@ -22,7 +22,7 @@ const BlogSection = () => {
                     {displayedPosts.map((post) => (
                         <div
                             key={post.id}
-                            className="bg-white dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-800 hover:border-violet-500/50 transition-all duration-300 hover:transform hover:scale-[1.02] group shadow-lg dark:shadow-none"
+                            className="bg-white dark:bg-tertiary rounded-2xl p-6 border border-gray-200 dark:border-gray-800 hover:border-violet-500/50 transition-all duration-300 hover:transform hover:scale-[1.02] group shadow-lg dark:shadow-none"
                         >
                             <div className="flex items-center justify-between mb-4">
                                 <span className="bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 px-3 py-1 rounded-full text-sm">
