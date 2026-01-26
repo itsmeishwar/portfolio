@@ -1,26 +1,43 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import { FaCode, FaReact, FaPaintBrush, FaCube } from "react-icons/fa";
 
 import { styles } from "../../styles";
 import { fadeIn, textVariant } from "../../utils/motion";
 import { SectionWrapper } from "../../hoc";
 
-const ServiceCard = ({ index, title, icon }) => (
+const services = [
+    {
+        title: "Full Stack Developer",
+        icon: FaCode,
+    },
+    {
+        title: "React / Next.js Specialist",
+        icon: FaReact,
+    },
+    {
+        title: "UI/UX Designer",
+        icon: FaPaintBrush,
+    },
+    {
+        title: "Three.js Animator",
+        icon: FaCube,
+    },
+];
+
+const ServiceCard = ({ index, title, icon: Icon }) => (
     <Tilt className='xs:w-[250px] w-full'>
         <motion.div
             variants={fadeIn("right", "spring", index * 0.5, 0.75)}
             className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
         >
             <div
-                options={{
-                    max: 45,
-                    scale: 1,
-                    speed: 450,
-                }}
-                className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+                className='bg-white dark:bg-tertiary rounded-[20px] py-8 px-12 min-h-[280px] flex justify-evenly items-center flex-col transition-all duration-300 hover:scale-105 group'
             >
-                {/* <img src={icon} alt='web-development' className='w-16 h-16 object-contain' /> */}
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-10 h-10 text-white" />
+                </div>
                 <h3 className='text-gray-900 dark:text-white text-[20px] font-bold text-center'>
                     {title}
                 </h3>
@@ -49,26 +66,28 @@ const About = () => {
             </motion.p>
 
             {/* Stats Counter */}
-            <div className="mt-10 flex gap-10 flex-wrap">
-                <div>
-                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold">2+</h3>
+            <motion.div
+                variants={fadeIn("", "", 0.2, 1)}
+                className="mt-10 flex gap-10 flex-wrap"
+            >
+                <div className="group">
+                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">2+</h3>
                     <p className="text-secondary">Years Experience</p>
                 </div>
-                <div>
-                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold">10+</h3>
+                <div className="group">
+                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">10+</h3>
                     <p className="text-secondary">Projects Completed</p>
                 </div>
-                <div>
-                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold">5+</h3>
+                <div className="group">
+                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">5+</h3>
                     <p className="text-secondary">Happy Clients</p>
                 </div>
-            </div>
+            </motion.div>
 
             <div className='mt-20 flex flex-wrap gap-10'>
-                <ServiceCard index={0} title="Full Stack Developer" />
-                <ServiceCard index={1} title="React / Next.js Specialist" />
-                <ServiceCard index={2} title="UI/UX Designer" />
-                <ServiceCard index={3} title="Three.js Animator" />
+                {services.map((service, index) => (
+                    <ServiceCard key={service.title} index={index} {...service} />
+                ))}
             </div>
         </>
     );

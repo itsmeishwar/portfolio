@@ -90,22 +90,37 @@ const Works = () => {
                     index={0}
                     name="SmartRep AI"
                     description="A web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs."
-                    tags={[{ name: 'react', color: 'text-blue-500' }, { name: 'mongodb', color: 'text-green-500' }, { name: 'tailwind', color: 'text-pink-500' }]}
-                    source_code_link="#"
+                    tags={[
+                        { name: 'react', color: 'from-blue-500 to-blue-600' },
+                        { name: 'mongodb', color: 'from-green-500 to-green-600' },
+                        { name: 'tailwind', color: 'from-pink-500 to-pink-600' }
+                    ]}
+                    source_code_link="https://github.com/itsmeishwar"
+                    live_demo_link="#"
                 />
                 <ProjectCard
                     index={1}
                     name="Notable"
                     description="Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location."
-                    tags={[{ name: 'react', color: 'text-blue-500' }, { name: 'restapi', color: 'text-green-500' }, { name: 'scss', color: 'text-pink-500' }]}
-                    source_code_link="#"
+                    tags={[
+                        { name: 'react', color: 'from-blue-500 to-blue-600' },
+                        { name: 'restapi', color: 'from-green-500 to-green-600' },
+                        { name: 'scss', color: 'from-pink-500 to-pink-600' }
+                    ]}
+                    source_code_link="https://github.com/itsmeishwar"
+                    live_demo_link="#"
                 />
                 <ProjectCard
                     index={2}
                     name="ZapFlow"
                     description="A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations."
-                    tags={[{ name: 'nextjs', color: 'text-blue-500' }, { name: 'supabase', color: 'text-green-500' }, { name: 'css', color: 'text-pink-500' }]}
-                    source_code_link="#"
+                    tags={[
+                        { name: 'nextjs', color: 'from-blue-500 to-blue-600' },
+                        { name: 'supabase', color: 'from-green-500 to-green-600' },
+                        { name: 'css', color: 'from-pink-500 to-pink-600' }
+                    ]}
+                    source_code_link="https://github.com/itsmeishwar"
+                    live_demo_link="#"
                 />
             </div>
         </>
