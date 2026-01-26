@@ -4,7 +4,7 @@ import { styles } from "../../styles";
 import { SectionWrapper } from "../../hoc";
 import { slideIn } from "../../utils/motion";
 import { MdEmail, MdLocationOn } from "react-icons/md";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import SocialLinks from "../ui/SocialLinks";
 
 const Contact = () => {
     const formRef = useRef();
@@ -45,7 +45,7 @@ const Contact = () => {
         <div className={`xl:mt-12 flex xl:flex-row flex-col gap-10 overflow-hidden`}>
             <motion.div
                 variants={slideIn("left", "tween", 0.2, 1)}
-                className='flex-1 bg-black-100 p-8 rounded-2xl'
+                className='flex-1 bg-white dark:bg-black-100 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800'
             >
                 <p className={styles.sectionSubText}>Get in touch</p>
                 <h3 className={styles.sectionHeadText}>Contact.</h3>
@@ -63,7 +63,8 @@ const Contact = () => {
                             value={form.name}
                             onChange={handleChange}
                             placeholder="What's your good name?"
-                            className='bg-tertiary py-4 px-6 placeholder:text-secondary text-gray-900 dark:text-white rounded-lg outline-none border-none font-medium'
+                            className='bg-gray-100 dark:bg-tertiary py-4 px-6 placeholder:text-secondary text-gray-900 dark:text-white rounded-lg outline-none border-2 border-transparent focus:border-violet-500 font-medium transition-colors'
+                            required
                         />
                     </label>
                     <label className='flex flex-col'>
@@ -74,7 +75,8 @@ const Contact = () => {
                             value={form.email}
                             onChange={handleChange}
                             placeholder="What's your web address?"
-                            className='bg-tertiary py-4 px-6 placeholder:text-secondary text-gray-900 dark:text-white rounded-lg outline-none border-none font-medium'
+                            className='bg-gray-100 dark:bg-tertiary py-4 px-6 placeholder:text-secondary text-gray-900 dark:text-white rounded-lg outline-none border-2 border-transparent focus:border-violet-500 font-medium transition-colors'
+                            required
                         />
                     </label>
                     <label className='flex flex-col'>
@@ -85,22 +87,24 @@ const Contact = () => {
                             value={form.message}
                             onChange={handleChange}
                             placeholder='What you want to say?'
-                            className='bg-tertiary py-4 px-6 placeholder:text-secondary text-gray-900 dark:text-white rounded-lg outline-none border-none font-medium'
+                            className='bg-gray-100 dark:bg-tertiary py-4 px-6 placeholder:text-secondary text-gray-900 dark:text-white rounded-lg outline-none border-2 border-transparent focus:border-violet-500 font-medium transition-colors'
+                            required
                         />
                     </label>
 
                     <button
                         type='submit'
-                        className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-gray-900 dark:text-white font-bold shadow-md shadow-primary hover:bg-white hover:text-tertiary transition-all'
+                        className='bg-gradient-to-r from-violet-600 to-indigo-600 py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md hover:shadow-2xl hover:shadow-violet-500/50 hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed'
+                        disabled={loading}
                     >
-                        {loading ? "Sending..." : "Send"}
+                        {loading ? "Sending..." : "Send Message"}
                     </button>
                 </form>
             </motion.div>
 
             <motion.div
                 variants={slideIn("right", "tween", 0.2, 1)}
-                className='flex-1 bg-black-100 p-8 rounded-2xl h-full'
+                className='flex-1 bg-white dark:bg-black-100 p-8 rounded-2xl h-full shadow-xl border border-gray-200 dark:border-gray-800'
             >
                 <div className="h-full flex flex-col justify-center gap-8">
                     <h3 className="text-gray-900 dark:text-white text-[24px] font-bold">Connect with me</h3>
@@ -110,8 +114,8 @@ const Contact = () => {
 
                     <div className="flex flex-col gap-6 mt-4">
                         <div className="flex items-center gap-4 group">
-                            <div className="w-14 h-14 bg-tertiary rounded-full flex justify-center items-center group-hover:bg-white transition-colors duration-300">
-                                <MdEmail className="w-6 h-6 text-gray-900 dark:text-white group-hover:text-tertiary" />
+                            <div className="w-14 h-14 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-full flex justify-center items-center group-hover:scale-110 transition-transform duration-300">
+                                <MdEmail className="w-6 h-6 text-white" />
                             </div>
                             <div>
                                 <p className="text-gray-900 dark:text-white font-bold text-[18px]">Email</p>
@@ -120,8 +124,8 @@ const Contact = () => {
                         </div>
 
                         <div className="flex items-center gap-4 group">
-                            <div className="w-14 h-14 bg-tertiary rounded-full flex justify-center items-center group-hover:bg-white transition-colors duration-300">
-                                <MdLocationOn className="w-6 h-6 text-gray-900 dark:text-white group-hover:text-tertiary" />
+                            <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex justify-center items-center group-hover:scale-110 transition-transform duration-300">
+                                <MdLocationOn className="w-6 h-6 text-white" />
                             </div>
                             <div>
                                 <p className="text-gray-900 dark:text-white font-bold text-[18px]">Location</p>
@@ -130,13 +134,9 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <div className="flex gap-4 mt-8">
-                        <a href="#" className="w-12 h-12 bg-tertiary rounded-full flex justify-center items-center hover:bg-white hover:text-tertiary transition-all duration-300">
-                            <FaLinkedin className="w-6 h-6" />
-                        </a>
-                        <a href="#" className="w-12 h-12 bg-tertiary rounded-full flex justify-center items-center hover:bg-white hover:text-tertiary transition-all duration-300">
-                            <FaGithub className="w-6 h-6" />
-                        </a>
+                    <div className="mt-8">
+                        <p className="text-gray-900 dark:text-white font-semibold mb-4">Follow me on</p>
+                        <SocialLinks />
                     </div>
                 </div>
             </motion.div>
