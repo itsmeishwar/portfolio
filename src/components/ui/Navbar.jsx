@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../../styles";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
 
 const navLinks = [
     {
@@ -30,6 +30,7 @@ const Navbar = () => {
     const [active, setActive] = useState("");
     const [toggle, setToggle] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -44,6 +45,19 @@ const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
+    };
 
     // Function to handle navigation for blog
     const handleBlogClick = () => {
@@ -75,7 +89,7 @@ const Navbar = () => {
     return (
         <nav
             className={`${styles.paddingX
-                } w-full flex items-center py-5 fixed top-0 z-20 transition-all duration-300 ${scrolled ? "bg-primary/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+                } w-full flex items-center py-5 fixed top-0 z-20 transition-all duration-300 ${scrolled ? "bg-white/80 dark:bg-primary/80 backdrop-blur-md shadow-lg" : "bg-transparent"
                 }`}
         >
             <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -87,20 +101,20 @@ const Navbar = () => {
                         window.scrollTo(0, 0);
                     }}
                 >
-                    <p className='text-white text-[18px] font-bold cursor-pointer flex'>
+                    <p className='text-gray-900 dark:text-white text-[18px] font-bold cursor-pointer flex'>
                         Ishwar&nbsp;
                         <span className='sm:block hidden'>Awasthi</span>
                     </p>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <div className='hidden lg:flex flex-row gap-10 items-center'>
-                    <ul className='list-none flex flex-row gap-10'>
+                <div className='hidden lg:flex flex-row gap-8 items-center'>
+                    <ul className='list-none flex flex-row gap-8'>
                         {navLinks.map((nav) => (
                             <li
                                 key={nav.id}
-                                className={`${active === nav.title ? "text-white" : "text-secondary"
-                                    } hover:text-white text-[18px] font-medium cursor-pointer transition-colors`}
+                                className={`${active === nav.title ? "text-gray-900 dark:text-white" : "text-secondary"
+                                    } hover:text-gray-900 dark:hover:text-white text-[18px] font-medium cursor-pointer transition-colors`}
                                 onClick={() => {
                                     if (nav.id === "blog") {
                                         handleBlogClick();
@@ -118,7 +132,7 @@ const Navbar = () => {
                                         className="flex items-center gap-1"
                                     >
                                         {nav.title}
-                                        <span className="text-xs bg-gradient-to-r from-violet-600 to-indigo-600 px-2 py-0.5 rounded-full ml-1">
+                                        <span className="text-xs bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-2 py-0.5 rounded-full ml-1">
                                             New
                                         </span>
                                     </Link>
@@ -129,16 +143,25 @@ const Navbar = () => {
                         ))}
                     </ul>
 
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 items-center">
+                        {/* Theme Toggle Button */}
+                        <button
+                            onClick={toggleTheme}
+                            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-900 dark:text-white transition-all text-xl"
+                            aria-label="Toggle Theme"
+                        >
+                            {theme === "dark" ? <FaSun /> : <FaMoon />}
+                        </button>
+
                         <button
                             onClick={handleHireMe}
-                            className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-6 py-2 rounded-full font-medium shadow-md hover:shadow-xl hover:scale-105 transition-all text-[16px]"
+                            className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-5 py-2 rounded-full font-medium shadow-md hover:shadow-xl hover:scale-105 transition-all text-[16px]"
                         >
                             Hire Me
                         </button>
                         <button
                             onClick={handleDownloadCV}
-                            className="border border-white/20 text-white px-6 py-2 rounded-full font-medium hover:bg-white/10 transition-all text-[16px]"
+                            className="border border-gray-900 dark:border-white/20 text-gray-900 dark:text-white px-5 py-2 rounded-full font-medium hover:bg-black/5 dark:hover:bg-white/10 transition-all text-[16px]"
                         >
                             CV
                         </button>
@@ -146,9 +169,16 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Navigation */}
-                <div className='lg:hidden flex flex-1 justify-end items-center'>
+                <div className='lg:hidden flex flex-1 justify-end items-center gap-4'>
+                    <button
+                        onClick={toggleTheme}
+                        className="text-gray-900 dark:text-white text-[20px] cursor-pointer"
+                    >
+                        {theme === "dark" ? <FaSun /> : <FaMoon />}
+                    </button>
+
                     <div
-                        className="text-white text-[24px] cursor-pointer z-30"
+                        className="text-gray-900 dark:text-white text-[24px] cursor-pointer z-30"
                         onClick={() => setToggle(!toggle)}
                     >
                         {toggle ? <FaTimes /> : <FaBars />}
@@ -156,13 +186,13 @@ const Navbar = () => {
 
                     <div
                         className={`${!toggle ? "hidden" : "flex"
-                            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl sidebar`}
+                            } p-6 bg-white dark:bg-black absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl sidebar shadow-xl border border-gray-200 dark:border-gray-800`}
                     >
                         <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
                             {navLinks.map((nav) => (
                                 <li
                                     key={nav.id}
-                                    className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? "text-white" : "text-secondary"
+                                    className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? "text-gray-900 dark:text-white" : "text-secondary"
                                         }`}
                                     onClick={() => {
                                         setToggle(!toggle);
@@ -182,7 +212,7 @@ const Navbar = () => {
                                             className="flex items-center gap-1"
                                         >
                                             {nav.title}
-                                            <span className="text-xs bg-gradient-to-r from-violet-600 to-indigo-600 px-2 py-0.5 rounded-full ml-1">
+                                            <span className="text-xs bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-2 py-0.5 rounded-full ml-1">
                                                 New
                                             </span>
                                         </Link>
@@ -191,11 +221,11 @@ const Navbar = () => {
                                     )}
                                 </li>
                             ))}
-                            <li className="w-full h-[1px] bg-white/10 my-1"></li>
+                            <li className="w-full h-[1px] bg-gray-300 dark:bg-white/10 my-1"></li>
                             <li>
                                 <button
                                     onClick={handleHireMe}
-                                    className="text-white w-full text-left text-[16px] font-medium text-secondary hover:text-white"
+                                    className="w-full text-left text-[16px] font-medium text-secondary hover:text-gray-900 dark:hover:text-white"
                                 >
                                     Hire Me
                                 </button>
@@ -203,7 +233,7 @@ const Navbar = () => {
                             <li>
                                 <button
                                     onClick={handleDownloadCV}
-                                    className="text-white w-full text-left text-[16px] font-medium text-secondary hover:text-white"
+                                    className="w-full text-left text-[16px] font-medium text-secondary hover:text-gray-900 dark:hover:text-white"
                                 >
                                     Download CV
                                 </button>
