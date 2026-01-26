@@ -55,8 +55,8 @@ const Hero = () => {
                 </div>
 
                 <div>
-                    <h1 className={`${styles.heroHeadText} text-white`}>
-                        Hi, I'm <br/><span className="text-[#915eff]">Ishwar Awasthi</span>
+                    <h1 className={`${styles.heroHeadText} text-gray-900 dark:text-white`}>
+                        Hi, I'm <br /><span className="text-[#915eff]">Ishwar Awasthi</span>
                     </h1>
                     <p className={`${styles.heroSubText} mt-2 text-white-100`}>
                         I am a <span className="text-[#915eff] font-bold">{text}</span>
@@ -67,7 +67,7 @@ const Hero = () => {
                         <a href="#projects" className="bg-[#915eff] py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-white hover:text-[#915eff] transition-all">
                             View My Work
                         </a>
-                        <a href="#contact" className="bg-transparent border border-white py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-white hover:text-primary transition-all">
+                        <a href="#contact" className="bg-transparent border border-gray-900 dark:border-white py-3 px-8 outline-none w-fit text-gray-900 dark:text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-white hover:text-primary transition-all">
                             Get In Touch
                         </a>
                     </div>
