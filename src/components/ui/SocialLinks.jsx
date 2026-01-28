@@ -28,7 +28,6 @@ const SocialLinks = ({ className = "" }) => {
             color: 'hover:text-[#EA4335]'
         }
     ];
-
     return (
         <div className={`flex gap-4 ${className}`}>
             {socialLinks.map((social) => {
