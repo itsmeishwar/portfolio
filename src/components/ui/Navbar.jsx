@@ -132,9 +132,6 @@ const Navbar = () => {
                                         className="flex items-center gap-1"
                                     >
                                         {nav.title}
-                                        <span className="text-xs bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-2 py-0.5 rounded-full ml-1">
-                                            New
-                                        </span>
                                     </Link>
                                 ) : (
                                     <a href={`#${nav.id}`}>{nav.title}</a>
@@ -147,7 +144,7 @@ const Navbar = () => {
                         {/* Theme Toggle Button */}
                         <button
                             onClick={toggleTheme}
-                            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-900 dark:text-white transition-all text-xl"
+                            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-amber-500 dark:text-yellow-400 transition-all text-xl hover:scale-110"
                             aria-label="Toggle Theme"
                         >
                             {theme === "dark" ? <FaSun /> : <FaMoon />}
@@ -172,7 +169,7 @@ const Navbar = () => {
                 <div className='lg:hidden flex flex-1 justify-end items-center gap-4'>
                     <button
                         onClick={toggleTheme}
-                        className="text-gray-900 dark:text-white text-[20px] cursor-pointer"
+                        className="text-amber-500 dark:text-yellow-400 text-[20px] cursor-pointer hover:scale-110 transition-transform"
                     >
                         {theme === "dark" ? <FaSun /> : <FaMoon />}
                     </button>
@@ -212,9 +209,6 @@ const Navbar = () => {
                                             className="flex items-center gap-1"
                                         >
                                             {nav.title}
-                                            <span className="text-xs bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-2 py-0.5 rounded-full ml-1">
-                                                New
-                                            </span>
                                         </Link>
                                     ) : (
                                         <a href={`#${nav.id}`}>{nav.title}</a>
