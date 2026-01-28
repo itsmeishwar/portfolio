@@ -65,7 +65,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="text-gray-700 dark:text-gray-200 uppercase tracking-wider text-sm md:text-base font-semibold mb-4"
+                        className="text-gray-700 dark:text-white uppercase tracking-wider text-sm md:text-base font-semibold mb-4"
                     >
                         Hello, I'm
                     </motion.p>
@@ -98,7 +98,7 @@ const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.9 }}
-                        className="text-gray-700 dark:text-gray-300 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 mb-8"
+                        className="text-gray-700 dark:text-gray-100 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 mb-8"
                     >
                         Crafting exceptional digital experiences with modern web technologies.
                         Passionate about clean code, innovative solutions, and user-centric design.
