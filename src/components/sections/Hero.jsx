@@ -50,42 +50,6 @@ const Hero = () => {
         <section className="relative w-full min-h-screen mx-auto overflow-hidden">
             {/* Animated Background Blobs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                    className="absolute top-20 -left-20 w-72 h-72 bg-purple-500/30 dark:bg-purple-500/20 rounded-full blur-3xl"
-                    animate={{
-                        x: [0, 100, 0],
-                        y: [0, 50, 0],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                />
-                <motion.div
-                    className="absolute top-40 right-20 w-96 h-96 bg-indigo-500/30 dark:bg-indigo-500/20 rounded-full blur-3xl"
-                    animate={{
-                        x: [0, -50, 0],
-                        y: [0, 100, 0],
-                    }}
-                    transition={{
-                        duration: 15,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                />
-                <motion.div
-                    className="absolute bottom-20 left-1/3 w-80 h-80 bg-violet-500/30 dark:bg-violet-500/20 rounded-full blur-3xl"
-                    animate={{
-                        x: [0, -100, 0],
-                        y: [0, -50, 0],
-                    }}
-                    transition={{
-                        duration: 18,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                />
             </div>
 
             <div className={`${styles.paddingX} relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between min-h-screen pt-20 lg:pt-0 gap-10 lg:gap-20`}>
@@ -106,18 +70,16 @@ const Hero = () => {
                         Hello, I'm
                     </motion.p>
 
-                    {/* Name with Gradient */}
+                    {/* Name */}
                     <motion.h1
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
-                        className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-4"
+                        className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 text-gray-900 dark:text-white"
                     >
-                        <span className="text-gray-900 dark:text-white">Ishwar</span>
+                        <span>Ishwar</span>
                         <br />
-                        <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                            Awasthi
-                        </span>
+                        <span>Awasthi</span>
                     </motion.h1>
 
                     {/* Animated Typing Tagline */}
@@ -125,10 +87,10 @@ const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.7 }}
-                        className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-medium mb-8 min-h-[40px]"
+                        className="text-lg sm:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 font-medium mb-8 min-h-[40px]"
                     >
-                        <span className="text-[#915eff] font-bold">{text}</span>
-                        <span className="animate-pulse text-[#915eff]">|</span>
+                        <span className="text-gray-900 dark:text-white font-bold">{text}</span>
+                        <span className="animate-pulse text-gray-900 dark:text-white">|</span>
                     </motion.div>
 
                     {/* Description */}
@@ -136,7 +98,7 @@ const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.9 }}
-                        className="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 mb-8"
+                        className="text-gray-600 dark:text-gray-400 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 mb-8"
                     >
                         Crafting exceptional digital experiences with modern web technologies.
                         Passionate about clean code, innovative solutions, and user-centric design.
@@ -151,14 +113,13 @@ const Hero = () => {
                     >
                         <a
                             href="#projects"
-                            className="group relative px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/50"
+                            className="group relative px-8 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg"
                         >
                             <span className="relative z-10">View My Work</span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </a>
                         <a
                             href="#contact"
-                            className="px-8 py-4 bg-white/10 dark:bg-white/5 backdrop-blur-sm border-2 border-gray-900 dark:border-white/20 text-gray-900 dark:text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:bg-white/20 dark:hover:bg-white/10 hover:shadow-xl"
+                            className="px-8 py-3 bg-white/10 dark:bg-white/5 backdrop-blur-sm border-2 border-gray-900 dark:border-white/20 text-gray-900 dark:text-white font-bold rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/20 dark:hover:bg-white/10 hover:shadow-lg"
                         >
                             Get In Touch
                         </a>
@@ -183,96 +144,16 @@ const Hero = () => {
                     className="flex-1 relative z-10 flex items-center justify-center lg:justify-end"
                 >
                     <div className="relative">
-                        {/* Decorative Elements */}
-                        <motion.div
-                            animate={{
-                                rotate: 360,
-                            }}
-                            transition={{
-                                duration: 20,
-                                repeat: Infinity,
-                                ease: "linear"
-                            }}
-                            className="absolute -inset-4 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 rounded-full opacity-20 blur-2xl"
-                        />
-
-                        <motion.div
-                            animate={{
-                                scale: [1, 1.1, 1],
-                            }}
-                            transition={{
-                                duration: 4,
-                                repeat: Infinity,
-                                ease: "easeInOut"
-                            }}
-                            className="absolute -inset-8 bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 rounded-full opacity-30 blur-3xl"
-                        />
-
-                        {/* Profile Image Container */}
-                        <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ duration: 0.3 }}
-                            className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96"
-                        >
-                            {/* Glowing Border */}
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 p-1">
-                                <div className="w-full h-full rounded-full bg-white dark:bg-primary overflow-hidden">
-                                    <img
-                                        src="/image.png"
-                                        alt="Ishwar Awasthi"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
+                        {/* Glowing Border */}
+                        <div className="absolute -inset-1 rounded-full bg-gray-900 dark:bg-white/20 p-1">
+                            <div className="w-full h-full rounded-full bg-white dark:bg-primary overflow-hidden">
+                                <img
+                                    src="/image.png"
+                                    alt="Ishwar Awasthi"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
-
-                            {/* Floating Decorative Rings */}
-                            <motion.div
-                                animate={{
-                                    rotate: 360,
-                                }}
-                                transition={{
-                                    duration: 15,
-                                    repeat: Infinity,
-                                    ease: "linear"
-                                }}
-                                className="absolute -inset-6 border-2 border-violet-500/30 rounded-full"
-                            />
-                            <motion.div
-                                animate={{
-                                    rotate: -360,
-                                }}
-                                transition={{
-                                    duration: 20,
-                                    repeat: Infinity,
-                                    ease: "linear"
-                                }}
-                                className="absolute -inset-10 border-2 border-indigo-500/20 rounded-full"
-                            />
-                        </motion.div>
-
-                        {/* Floating Dots */}
-                        <motion.div
-                            animate={{
-                                y: [0, -20, 0],
-                            }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut"
-                            }}
-                            className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-violet-500 to-purple-500 rounded-full opacity-60 blur-xl"
-                        />
-                        <motion.div
-                            animate={{
-                                y: [0, 20, 0],
-                            }}
-                            transition={{
-                                duration: 4,
-                                repeat: Infinity,
-                                ease: "easeInOut"
-                            }}
-                            className="absolute -bottom-10 -left-10 w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-full opacity-60 blur-xl"
-                        />
+                        </div>
                     </div>
                 </motion.div>
             </div>
