@@ -101,7 +101,7 @@ const Navbar = () => {
                         window.scrollTo(0, 0);
                     }}
                 >
-                    <p className='text-gray-900 dark:text-white text-[18px] font-bold cursor-pointer flex'>
+                    <p className='text-white-100 text-[18px] font-bold cursor-pointer flex'>
                         Ishwar&nbsp;
                         <span className='sm:block hidden'>Awasthi</span>
                     </p>
