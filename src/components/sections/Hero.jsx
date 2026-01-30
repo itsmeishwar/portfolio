@@ -117,12 +117,14 @@ const Hero = () => {
                         >
                             <span className="relative z-10">View My Work</span>
                         </a>
-                        <a
-                            href="#contact"
-                            className="px-8 py-3 bg-white/10 dark:bg-white/5 backdrop-blur-sm border-2 border-gray-900 dark:border-white/20 text-gray-900 dark:text-white font-bold rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/20 dark:hover:bg-white/10 hover:shadow-lg"
-                        >
-                            Get In Touch
-                        </a>
+                        <div className="p-[2px] rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25">
+                            <a
+                                href="#contact"
+                                className="block px-8 py-3 bg-white dark:bg-primary text-white-100 font-bold rounded-[6px] transition-colors hover:bg-transparent hover:text-white"
+                            >
+                                Get In Touch
+                            </a>
+                        </div>
                     </motion.div>
 
                     {/* Social Links */}
