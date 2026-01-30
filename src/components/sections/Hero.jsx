@@ -47,7 +47,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="relative w-full min-h-screen mx-auto overflow-hidden text-gray-900 dark:text-white">
+        <section className="relative w-full min-h-screen mx-auto overflow-hidden text-white-100">
             {/* Animated Background Blobs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
             </div>
@@ -65,7 +65,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="text-gray-700 dark:text-white uppercase tracking-wider text-sm md:text-base font-semibold mb-4"
+                        className="text-secondary uppercase tracking-wider text-sm md:text-base font-semibold mb-4"
                     >
                         Hello, I'm
                     </motion.p>
@@ -75,7 +75,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 text-gray-900 dark:text-white"
+                        className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 text-white-100"
                     >
                         <span>Ishwar</span>
                         <br />
@@ -87,10 +87,10 @@ const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.7 }}
-                        className="text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-white font-medium mb-8 min-h-[40px]"
+                        className="text-lg sm:text-xl lg:text-2xl text-white-100 font-medium mb-8 min-h-[40px]"
                     >
-                        <span className="text-gray-900 dark:text-white font-bold">{text}</span>
-                        <span className="animate-pulse text-gray-900 dark:text-white">|</span>
+                        <span className="text-white-100 font-bold">{text}</span>
+                        <span className="animate-pulse text-white-100">|</span>
                     </motion.div>
 
                     {/* Description */}
@@ -98,7 +98,7 @@ const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.9 }}
-                        className="text-gray-700 dark:text-gray-100 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 mb-8"
+                        className="text-secondary text-sm sm:text-base max-w-xl mx-auto lg:mx-0 mb-8"
                     >
                         Crafting exceptional digital experiences with modern web technologies.
                         Passionate about clean code, innovative solutions, and user-centric design.
