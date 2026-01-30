@@ -40,7 +40,7 @@ const Footer = () => {
                         </div>
                         <div className="flex items-center gap-2 text-secondary text-[13px] hover:text-white transition">
                             <FaMapMarkerAlt className="w-4 h-4" />
-                            <span>Lucknow, India</span>
+                            <span>Kathmandu, Nepal</span>
                         </div>
                     </div>
 
