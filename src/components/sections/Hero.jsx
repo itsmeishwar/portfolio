@@ -47,7 +47,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="relative w-full min-h-screen mx-auto overflow-hidden">
+        <section className="relative w-full min-h-screen mx-auto overflow-hidden text-gray-900 dark:text-white">
             {/* Animated Background Blobs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
             </div>
