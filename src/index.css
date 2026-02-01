@@ -3,13 +3,18 @@
 :root {
   /* Light Mode Defaults */
   --primary: #ffffff;
-  --secondary: #4b5563; /* Gray-600 */
-  --tertiary: #f3f4f6;  /* Gray-100 */
-  --black-100: #e5e7eb; /* Gray-200 */
-  --black-200: #d1d5db; /* Gray-300 */
-  --white-100: #1f2937; /* Gray-800 */
+  --secondary: #4b5563;
+  /* Gray-600 */
+  --tertiary: #f3f4f6;
+  /* Gray-100 */
+  --black-100: #e5e7eb;
+  /* Gray-200 */
+  --black-200: #d1d5db;
+  /* Gray-300 */
+  --white-100: #1f2937;
+  /* Gray-800 */
   --card-shadow: 0px 35px 120px -15px rgba(0, 0, 0, 0.1);
-  
+
   color-scheme: light;
 }
 
@@ -38,6 +43,9 @@
 
   --breakpoint-xs: 450px;
 }
+
+/* Configure dark mode to use class strategy */
+@variant dark (:where(.dark) &);
 
 @layer base {
   html {
@@ -86,4 +94,23 @@
   background: linear-gradient(to top, #ec008c, #fc6767);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Profile Image Animations */
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
 }
