@@ -38,7 +38,7 @@ const SocialLinks = ({ className = "" }) => {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`w-12 h-12 rounded-full bg-white-100/5 backdrop-blur-md border border-white-100/10 flex items-center justify-center text-white-100 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-white-100/10 hover:border-violet-500/50 group`}
+                        className={`w-12 h-12 rounded-full bg-gray-100 dark:bg-white-100/5 backdrop-blur-md border border-gray-300 dark:border-white-100/10 flex items-center justify-center text-gray-700 dark:text-white-100 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-gray-200 dark:hover:bg-white-100/10 hover:border-violet-500/50 group`}
                         aria-label={social.name}
                     >
                         <Icon className="w-5 h-5 group-hover:text-violet-500 transition-colors" />
