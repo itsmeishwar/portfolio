@@ -108,7 +108,7 @@ const Footer = () => {
                     </div>
 
                     <div className="flex items-center gap-2 text-secondary text-[13px]">
-                        Made with <FaHeart className="text-red-500 w-3 h-3" /> by Ishwar Awasthi
+                        Made by Ishwar Awasthi
                     </div>
 
                     <div className="text-secondary text-[12px] text-center md:text-right">
