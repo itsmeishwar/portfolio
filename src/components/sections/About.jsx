@@ -79,7 +79,7 @@ const About = () => {
                     <p className="text-secondary">Projects Completed</p>
                 </div>
                 <div className="group">
-                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">5+</h3>
+                    <h3 className="text-gray-900 dark:text-white text-[30px] font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">4+</h3>
                     <p className="text-secondary">Happy Clients</p>
                 </div>
             </motion.div>
