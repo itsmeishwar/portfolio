@@ -6,7 +6,7 @@ const SocialLinks = ({ className = "" }) => {
         {
             name: 'LinkedIn',
             icon: FaLinkedin,
-            url: 'https://linkedin.com/in/ishwar-awasthi',
+            url: 'https://linkedin.com/ishwar-awasthi',
             color: 'hover:text-[#0077b5]'
         },
         {
