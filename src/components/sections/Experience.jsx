@@ -12,18 +12,20 @@ import { FaBriefcase } from "react-icons/fa";
 
 const experiences = [
     {
-        title: "React.js Developer",
-        company_name: "Tech Solutions Inc.",
+        title: "ui/ux Designer",
+        company_name: "Frontbase Inc",
         icon: <FaBriefcase />,
         iconBg: "#383E56",
-        date: "March 2020 - April 2021",
+        date: "December 2025-Present",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+        "Conducted user research to translate business needs into effective design solutions.",
+        "Created wireframes UI designs using tools like Figma.",
+        "Improved user experience through iterative design, user feedback, and data-driven design decisions.",
+        "Designed responsive layouts optimized for desktop, tablet, and mobile devices.",
+        "Worked on accessibility-friendly designs by following UX best practices ."
         ],
     },
+
     {
         title: "React Native Developer",
         company_name: "Mobile Innovations",
