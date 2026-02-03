@@ -13,7 +13,7 @@ const services = [
         icon: FaCode,
     },
     {
-        title: "React / Next.js Specialist",
+        title: "React / Next.js Developer",
         icon: FaReact,
     },
     {
@@ -21,7 +21,7 @@ const services = [
         icon: FaPaintBrush,
     },
     {
-        title: "Three.js Animator",
+        title: "Mobile App Developer",
         icon: FaCube,
     },
 ];
