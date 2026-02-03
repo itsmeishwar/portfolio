@@ -89,7 +89,7 @@ const Footer = () => {
                         </div>
                         <div>
                             <a
-                                href="mailto:ishwarawasthi@example.com"
+                                href="mailto:ishwarawasthi3@gmail.com"
                                 className="inline-block bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-4 py-2 rounded-lg text-[13px] font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 mt-2"
                             >
                                 Get In Touch
