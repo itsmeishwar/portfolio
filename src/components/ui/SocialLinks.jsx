@@ -24,7 +24,7 @@ const SocialLinks = ({ className = "" }) => {
         {
             name: 'Email',
             icon: FaEnvelope,
-            url: 'mailto:ishwarawasthi@example.com',
+            url: 'mailto:ishwarawasthi3@gmail.com',
             color: 'hover:text-[#EA4335]'
         }
     ];
