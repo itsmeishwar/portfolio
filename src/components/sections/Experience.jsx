@@ -28,7 +28,7 @@ const experiences = [
 
     {
         title: "React Native Developer",
-        company_name: "Mobile Innovations",
+        company_name: "project",
         icon: <FaBriefcase />,
         iconBg: "#E6DEDD",
         date: "Jan 2021 - Feb 2022",
