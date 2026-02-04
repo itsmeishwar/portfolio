@@ -40,6 +40,19 @@ const experiences = [
             "Participating in code reviews and providing constructive feedback to other developers.",
         ],
     },
+    {
+        title: "Web Developer",
+        company_name: "personal projects",
+        icon: <FaBriefcase />,
+        iconBg: "#383E56",
+        date: "Jan 2025",
+        points: [
+            "Developing and maintaining web applications using React.js and other related technologies.",
+            "Collaborating with cross-functional teams including designers developers to create high-quality products.",
+            "Implementing responsive design and ensuring cross-browser compatibility.",
+            "Participating in code reviews and providing constructive feedback to other developers.",
+        ],
+    },
 ];
 
 const ExperienceCard = ({ experience }) => (
