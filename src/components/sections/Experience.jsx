@@ -58,6 +58,7 @@ const experiences = [
         date: "Jan 2025 - Present",
         points: [
             "Developed responsive and interactive mobile applications using React Native for both iOS and Android.",
+            "Optimized application performance, reducing load times by 40% through code splitting and lazy loading.",
             
         ],
     },
