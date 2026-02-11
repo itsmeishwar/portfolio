@@ -47,7 +47,7 @@ const experiences = [
             "Built cross-platform mobile applications using React Native for both iOS and Android.",
             "Implemented native modules and integrated third-party SDKs for maps, payments, and push notifications.",
             "Collaborated with backend teams to design efficient API schemas for mobile data consumption.",
-            
+            "Published apps to the Apple App Store and Google Play Store, managing the entire release process.",
         ],
     },
      {
