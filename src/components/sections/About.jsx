@@ -9,20 +9,20 @@ import { SectionWrapper } from "../../hoc";
 
 const services = [
     {
-        title: "Full Stack Developer",
-        icon: FaCode,
-    },
-    {
-        title: "React / Next.js Developer",
-        icon: FaReact,
-    },
-    {
         title: "UI/UX Designer",
         icon: FaPaintBrush,
     },
     {
+        title: "Frontend Developer",
+        icon: FaCode,
+    },
+    {
         title: "Mobile App Developer",
         icon: FaCube,
+    },
+    {
+        title: "React / Next.js Expert",
+        icon: FaReact,
     },
 ];
 
@@ -58,11 +58,7 @@ const About = () => {
                 variants={fadeIn("", "", 0.1, 1)}
                 className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
             >
-                I'm a skilled software developer with experience in TypeScript and
-                JavaScript, and expertise in frameworks like React, Node.js, and
-                Three.js. I'm a quick learner and collaborate closely with clients to
-                create efficient, scalable, and user-friendly solutions that solve
-                real-world problems. Let's work together to bring your ideas to life!
+                I am a creative UI/UX Designer and Developer with a passion for building beautiful, functional interfaces. I specialize in Frontend Web Development and Mobile App creation, translating complex requirements into intuitive, engaging user experiences. With expertise in React, React Native, and modern design principles, I ensure every pixel serves a purpose and every interaction feels seamless.
             </motion.p>
 
             {/* Stats Counter */}
