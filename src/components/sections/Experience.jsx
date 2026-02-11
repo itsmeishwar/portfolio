@@ -8,49 +8,46 @@ import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../../styles";
 import { SectionWrapper } from "../../hoc";
 import { textVariant } from "../../utils/motion";
-import { FaBriefcase } from "react-icons/fa";
+import { FaBriefcase, FaLaptopCode, FaMobileAlt, FaPencilRuler } from "react-icons/fa";
 
 const experiences = [
     {
-        title: "ui/ux Designer",
-        company_name: "Frontbase Inc",
-        icon: <FaBriefcase />,
+        title: "Senior UI/UX Designer",
+        company_name: "Creative Studio",
+        icon: <FaPencilRuler />,
         iconBg: "#383E56",
-        date: "December 2025-Present",
+        date: "Jan 2025 - Present",
         points: [
-        "Conducted user research to translate business needs into effective design solutions.",
-        "Created wireframes UI designs using tools like Figma.",
-        "Improved user experience through iterative design, user feedback, and data-driven design decisions.",
-        "Designed responsive layouts optimized for desktop, tablet, and mobile devices.",
-        "Worked on accessibility-friendly designs by following UX best practices ."
-        ],
-    },
-
-   
-    {
-        title: "Web Developer",
-        company_name: "personal projects",
-        icon: <FaBriefcase />,
-        iconBg: "#383E56",
-        date: "Jan 2025",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Leading user research and usability testing to inform design decisions and improve product usability.",
+            "Creating high-fidelity wireframes, prototypes, and UI designs using Figma and Adobe XD.",
+            "Collaborating with developers to ensure accurate implementation of designs and design systems.",
+            "Mentoring junior designers and establishing design best practices across the organization.",
         ],
     },
     {
-        title: "Web Developer",
-        company_name: "personal projects",
-        icon: <FaBriefcase />,
-        iconBg: "#383E56",
-        date: "Jan 2025",
+        title: "Frontend Developer",
+        company_name: "Tech Solutions Inc.",
+        icon: <FaLaptopCode />,
+        iconBg: "#E6DEDD",
+        date: "Jan 2024 - Dec 2024",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Developed responsive and interactive web applications using React.js and Next.js.",
+            "Optimized application performance, reducing load times by 40% through code splitting and lazy loading.",
+            "Integrated RESTful APIs and GraphQL for seamless data fetching and state management.",
+            "Implemented modern UI frameworks like Tailwind CSS to create visually appealing interfaces.",
+        ],
+    },
+    {
+        title: "Mobile App Developer",
+        company_name: "AppInnovate",
+        icon: <FaMobileAlt />,
+        iconBg: "#383E56",
+        date: "Jan 2023 - Dec 2023",
+        points: [
+            "Built cross-platform mobile applications using React Native for both iOS and Android.",
+            "Implemented native modules and integrated third-party SDKs for maps, payments, and push notifications.",
+            "Collaborated with backend teams to design efficient API schemas for mobile data consumption.",
+            "Published apps to the Apple App Store and Google Play Store, managing the entire release process.",
         ],
     },
 ];
