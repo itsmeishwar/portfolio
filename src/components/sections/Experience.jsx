@@ -59,6 +59,7 @@ const experiences = [
         points: [
             "Developed responsive and interactive mobile applications using React Native for both iOS and Android.",
             "Optimized application performance, reducing load times by 40% through code splitting and lazy loading.",
+            "Collaborated with backend teams to design efficient API schemas for mobile data consumption.",
             
         ],
     },
