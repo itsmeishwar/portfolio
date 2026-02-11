@@ -50,6 +50,17 @@ const experiences = [
             "Published apps to the Apple App Store and Google Play Store, managing the entire release process.",
         ],
     },
+     {
+        title: "IOS App Developer",
+        company_name: "AppInnovate",
+        icon: <FaMobileAlt />,
+        iconBg: "#383E56",
+        date: "Jan 2025 - Present",
+        points: [
+            "Developed responsive and interactive mobile applications using React Native for both iOS and Android.",
+            
+        ],
+    },
 ];
 
 const ExperienceCard = ({ experience }) => (
