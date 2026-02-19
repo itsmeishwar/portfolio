@@ -2,7 +2,7 @@ const styles = {
     paddingX: "sm:px-16 px-6",
     paddingY: "sm:py-16 py-6",
     padding: "sm:px-16 px-6 sm:py-16 py-10",
-
+// this is a JavaScript object that defines various styles used throughout the application. It includes padding styles for different screen sizes, as well as specific styles for hero text and section headers. The styles are defined using Tailwind CSS utility classes, which allow for responsive design and easy customization. The object is exported for use in other components of the application.
     heroHeadText:
         "font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2",
     heroSubText:
