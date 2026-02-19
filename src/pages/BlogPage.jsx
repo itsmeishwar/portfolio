@@ -26,7 +26,7 @@ const BlogPage = () => {
                     <p className={styles.sectionSubText}>My Thoughts & Tutorials</p>
                     <h2 className={styles.sectionHeadText}>Blog.</h2>
                 </motion.div>
-
+                {/* this is the blog page component that displays a list of blog posts. It uses the Framer Motion library to add animations to the page elements, such as fading in the blog post cards and animating the section header. Each blog post is displayed in a card format with a title, excerpt, category, date, and read time. The cards also have hover effects that change their appearance when hovered over. Each card includes a link to the individual blog post page for more details. */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogPosts.map((post, index) => (
                         <motion.div
