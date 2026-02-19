@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+/* this is the main CSS file for the application. It defines global styles, CSS variables for theming, and custom animations. The file uses Tailwind CSS for utility classes and also includes custom styles for gradients, text gradients, and profile image animations. The CSS variables are defined for both light and dark modes, allowing for easy theming throughout the application. */
 :root {
   /* Light Mode Defaults */
   --primary: #ffffff;
