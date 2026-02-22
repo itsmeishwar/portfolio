@@ -74,16 +74,16 @@ const ExperienceCard = ({ experience }) => (
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            overflow: 'visible',
+            overflow: 'hidden',
         }}
         icon={
             <div
                 style={{
+                    position: 'absolute',
+                    inset: 0,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '100%',
-                    height: '100%',
                     color: experience.iconBg === '#E6DEDD' ? '#383E56' : '#fff',
                 }}
             >

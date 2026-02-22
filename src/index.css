@@ -114,3 +114,40 @@
 .animate-glow-pulse {
   animation: glow-pulse 3s ease-in-out infinite;
 }
+
+/* ── Vertical Timeline Fixes ── */
+/* Ensure the icon circle is a positioning context */
+.vertical-timeline-element-icon {
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15),
+              inset 0 2px 0 rgba(0, 0, 0, 0.06),
+              0 3px 0 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Remove any default margin/padding from the icon SVG that shifts it */
+.vertical-timeline-element-icon svg {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Make sure the vertical connecting line is centered */
+.vertical-timeline::before {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin-left: 0 !important;
+}
+
+/* On mobile the line is on the left */
+@media only screen and (max-width: 1169px) {
+  .vertical-timeline::before {
+    left: 18px !important;
+    transform: none !important;
+  }
+  .vertical-timeline-element-icon {
+    left: 0 !important;
+  }
+}
