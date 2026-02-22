@@ -14,7 +14,7 @@ const experiences = [
     {
         title: "Senior UI/UX Designer",
         company_name: "Creative Studio",
-        icon: <FaPencilRuler />,
+        icon: <FaPencilRuler size={28} />,
         iconBg: "#383E56",
         date: "Jan 2025 - Present",
         points: [
@@ -27,7 +27,7 @@ const experiences = [
     {
         title: "Frontend Developer",
         company_name: "Tech Solutions Inc.",
-        icon: <FaLaptopCode />,
+        icon: <FaLaptopCode size={28} />,
         iconBg: "#E6DEDD",
         date: "Jan 2024 - Dec 2024",
         points: [
@@ -40,7 +40,7 @@ const experiences = [
     {
         title: "Mobile App Developer",
         company_name: "AppInnovate",
-        icon: <FaMobileAlt />,
+        icon: <FaMobileAlt size={28} />,
         iconBg: "#383E56",
         date: "Jan 2023 - Dec 2023",
         points: [
@@ -50,17 +50,16 @@ const experiences = [
             "Published apps to the Apple App Store and Google Play Store, managing the entire release process.",
         ],
     },
-     {
+    {
         title: "IOS App Developer",
         company_name: "AppInnovate",
-        icon: <FaMobileAlt />,
+        icon: <FaMobileAlt size={28} />,
         iconBg: "#383E56",
         date: "Jan 2025 - Present",
         points: [
             "Developed responsive and interactive mobile applications using React Native for both iOS and Android.",
             "Optimized application performance, reducing load times by 40% through code splitting and lazy loading.",
             "Collaborated with backend teams to design efficient API schemas for mobile data consumption.",
-            
         ],
     },
 ];
@@ -70,8 +69,27 @@ const ExperienceCard = ({ experience }) => (
         contentStyle={{ background: "var(--tertiary)", color: "var(--white-100)" }}
         contentArrowStyle={{ borderRight: "7px solid var(--tertiary)" }}
         date={experience.date}
-        iconStyle={{ background: experience.iconBg, color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-        icon={experience.icon}
+        iconStyle={{
+            background: experience.iconBg,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            overflow: 'visible',
+        }}
+        icon={
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: '100%',
+                    height: '100%',
+                    color: experience.iconBg === '#E6DEDD' ? '#383E56' : '#fff',
+                }}
+            >
+                {experience.icon}
+            </div>
+        }
     >
         <div>
             <h3 className='text-gray-900 dark:text-white text-[24px] font-bold'>{experience.title}</h3>
