@@ -8,15 +8,15 @@ import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../../styles";
 import { SectionWrapper } from "../../hoc";
 import { textVariant } from "../../utils/motion";
-import { FaBriefcase, FaLaptopCode, FaMobileAlt, FaPencilRuler } from "react-icons/fa";
+import { FaLaptopCode, FaMobileAlt, FaPencilRuler } from "react-icons/fa";
 
 const experiences = [
     {
         title: "Senior UI/UX Designer",
         company_name: "Creative Studio",
-        icon: <FaPencilRuler size={28} />,
-        iconBg: "#383E56",
-        date: "Jan 2025 - Present",
+        icon: <FaPencilRuler size={24} />,
+        iconBg: "#4F46E5",
+        date: "Jan 2025 – Present",
         points: [
             "Leading user research and usability testing to inform design decisions and improve product usability.",
             "Creating high-fidelity wireframes, prototypes, and UI designs using Figma and Adobe XD.",
@@ -27,9 +27,9 @@ const experiences = [
     {
         title: "Frontend Developer",
         company_name: "Tech Solutions Inc.",
-        icon: <FaLaptopCode size={28} />,
-        iconBg: "#E6DEDD",
-        date: "Jan 2024 - Dec 2024",
+        icon: <FaLaptopCode size={24} />,
+        iconBg: "#0EA5E9",
+        date: "Jan 2024 – Dec 2024",
         points: [
             "Developed responsive and interactive web applications using React.js and Next.js.",
             "Optimized application performance, reducing load times by 40% through code splitting and lazy loading.",
@@ -40,9 +40,9 @@ const experiences = [
     {
         title: "Mobile App Developer",
         company_name: "AppInnovate",
-        icon: <FaMobileAlt size={28} />,
-        iconBg: "#383E56",
-        date: "Jan 2023 - Dec 2023",
+        icon: <FaMobileAlt size={24} />,
+        iconBg: "#10B981",
+        date: "Jan 2023 – Dec 2023",
         points: [
             "Built cross-platform mobile applications using React Native for both iOS and Android.",
             "Implemented native modules and integrated third-party SDKs for maps, payments, and push notifications.",
@@ -51,68 +51,100 @@ const experiences = [
         ],
     },
     {
-        title: "IOS App Developer",
+        title: "iOS App Developer",
         company_name: "AppInnovate",
-        icon: <FaMobileAlt size={28} />,
-        iconBg: "#383E56",
-        date: "Jan 2025 - Present",
+        icon: <FaMobileAlt size={24} />,
+        iconBg: "#F59E0B",
+        date: "Jun 2022 – Dec 2022",
         points: [
-            "Developed responsive and interactive mobile applications using React Native for both iOS and Android.",
+            "Developed responsive and interactive mobile applications using React Native for iOS and Android.",
             "Optimized application performance, reducing load times by 40% through code splitting and lazy loading.",
             "Collaborated with backend teams to design efficient API schemas for mobile data consumption.",
         ],
     },
 ];
 
-const ExperienceCard = ({ experience }) => (
-    <VerticalTimelineElement
-        contentStyle={{ background: "var(--tertiary)", color: "var(--white-100)" }}
-        contentArrowStyle={{ borderRight: "7px solid var(--tertiary)" }}
-        date={experience.date}
-        iconStyle={{
-            background: experience.iconBg,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            overflow: 'hidden',
-        }}
-        icon={
-            <div
-                style={{
-                    position: 'absolute',
-                    inset: 0,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    color: experience.iconBg === '#E6DEDD' ? '#383E56' : '#fff',
-                }}
-            >
-                {experience.icon}
-            </div>
-        }
-    >
-        <div>
-            <h3 className='text-gray-900 dark:text-white text-[24px] font-bold'>{experience.title}</h3>
-            <p
-                className='text-secondary text-[16px] font-semibold'
-                style={{ margin: 0 }}
-            >
-                {experience.company_name}
-            </p>
-        </div>
+const ExperienceCard = ({ experience }) => {
+    const isDark =
+        typeof document !== "undefined" &&
+        document.documentElement.classList.contains("dark");
 
-        <ul className='mt-5 list-disc ml-5 space-y-2'>
-            {experience.points.map((point, index) => (
-                <li
-                    key={`experience-point-${index}`}
-                    className='text-white-100 text-[14px] pl-1 tracking-wider'
+    return (
+        <VerticalTimelineElement
+            contentStyle={{
+                background: "var(--exp-card-bg)",
+                color: "var(--exp-card-text)",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.12)",
+                border: "1px solid var(--exp-card-border)",
+                borderRadius: "12px",
+            }}
+            contentArrowStyle={{
+                borderRight: "7px solid var(--exp-card-bg)",
+            }}
+            date={experience.date}
+            iconStyle={{
+                background: experience.iconBg,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                boxShadow: `0 0 0 4px ${experience.iconBg}55, 0 4px 16px rgba(0,0,0,0.25)`,
+            }}
+            icon={
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                        height: "100%",
+                        color: "#ffffff",
+                    }}
                 >
-                    {point}
-                </li>
-            ))}
-        </ul>
-    </VerticalTimelineElement>
-);
+                    {experience.icon}
+                </div>
+            }
+        >
+            <div>
+                <h3
+                    style={{
+                        color: "var(--exp-heading)",
+                        fontSize: "20px",
+                        fontWeight: 700,
+                        marginBottom: "4px",
+                    }}
+                >
+                    {experience.title}
+                </h3>
+                <p
+                    style={{
+                        color: experience.iconBg,
+                        fontSize: "15px",
+                        fontWeight: 600,
+                        margin: 0,
+                    }}
+                >
+                    {experience.company_name}
+                </p>
+            </div>
+
+            <ul className="mt-5 list-disc ml-5 space-y-2">
+                {experience.points.map((point, index) => (
+                    <li
+                        key={`experience-point-${index}`}
+                        style={{
+                            color: "var(--exp-point)",
+                            fontSize: "14px",
+                            paddingLeft: "4px",
+                            lineHeight: 1.7,
+                        }}
+                    >
+                        {point}
+                    </li>
+                ))}
+            </ul>
+        </VerticalTimelineElement>
+    );
+};
 
 const Experience = () => {
     return (
@@ -122,15 +154,15 @@ const Experience = () => {
                 <h2 className={styles.sectionHeadText}>Work Experience.</h2>
             </motion.div>
 
-            <div className='mt-20 flex flex-col'>
-                <VerticalTimeline>
+            <div className="mt-20 flex flex-col">
+                <VerticalTimeline lineColor="var(--exp-line)">
                     {experiences.map((experience, index) => (
                         <ExperienceCard key={index} experience={experience} />
                     ))}
                 </VerticalTimeline>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default SectionWrapper(Experience, "work");

@@ -1,19 +1,23 @@
 @import "tailwindcss";
+
 /* this is the main CSS file for the application. It defines global styles, CSS variables for theming, and custom animations. The file uses Tailwind CSS for utility classes and also includes custom styles for gradients, text gradients, and profile image animations. The CSS variables are defined for both light and dark modes, allowing for easy theming throughout the application. */
 :root {
   /* Light Mode Defaults */
   --primary: #ffffff;
   --secondary: #4b5563;
-  /* Gray-600 */
   --tertiary: #f3f4f6;
-  /* Gray-100 */
   --black-100: #e5e7eb;
-  /* Gray-200 */
   --black-200: #d1d5db;
-  /* Gray-300 */
   --white-100: #1f2937;
-  /* Gray-800 */
   --card-shadow: 0px 35px 120px -15px rgba(0, 0, 0, 0.1);
+
+  /* Experience Section – Light */
+  --exp-line: #6366f1;
+  --exp-card-bg: #ffffff;
+  --exp-card-text: #1f2937;
+  --exp-card-border: #e5e7eb;
+  --exp-heading: #111827;
+  --exp-point: #374151;
 
   color-scheme: light;
 }
@@ -27,6 +31,14 @@
   --black-200: #090325;
   --white-100: #f3f3f3;
   --card-shadow: 0px 35px 120px -15px #211e35;
+
+  /* Experience Section – Dark */
+  --exp-line: #818cf8;
+  --exp-card-bg: #1e1b4b;
+  --exp-card-text: #f3f3f3;
+  --exp-card-border: #312e81;
+  --exp-heading: #ffffff;
+  --exp-point: #d1d5db;
 
   color-scheme: dark;
 }
@@ -115,38 +127,63 @@
   animation: glow-pulse 3s ease-in-out infinite;
 }
 
-/* ── Vertical Timeline Fixes ── */
-/* Ensure the icon circle is a positioning context */
+/* ── Vertical Timeline Overrides ── */
+
+/* Timeline connecting line */
+.vertical-timeline::before {
+  background: var(--exp-line) !important;
+  width: 3px !important;
+}
+
+/* Icon circle: centered, no extra offset */
 .vertical-timeline-element-icon {
-  position: relative !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15),
-              inset 0 2px 0 rgba(0, 0, 0, 0.06),
-              0 3px 0 4px rgba(0, 0, 0, 0.05) !important;
+  overflow: hidden !important;
 }
 
-/* Remove any default margin/padding from the icon SVG that shifts it */
-.vertical-timeline-element-icon svg {
-  display: block;
+/* Remove stray margin/padding from icon children */
+.vertical-timeline-element-icon>* {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Make sure the vertical connecting line is centered */
-.vertical-timeline::before {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  margin-left: 0 !important;
+/* Content card text colour in light mode */
+.vertical-timeline-element-content p,
+.vertical-timeline-element-content li {
+  color: var(--exp-point) !important;
 }
 
-/* On mobile the line is on the left */
+/* Date text */
+.vertical-timeline-element-date {
+  color: var(--secondary) !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+
+/* Desktop: centered line */
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline::before {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* Mobile: left-anchored line */
 @media only screen and (max-width: 1169px) {
   .vertical-timeline::before {
     left: 18px !important;
     transform: none !important;
+    margin-left: 0 !important;
   }
+
   .vertical-timeline-element-icon {
     left: 0 !important;
   }
