@@ -65,83 +65,68 @@ const projects = [
     },
 ];
 
-const ProjectCard = ({ index, name, description, tags, gradient, icon: Icon, source_code_link, live_demo_link }) => {
+const ProjectCard = ({ index, name, description, tags, gradient, icon: Icon, source_code_link }) => {
     return (
-        <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+        <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="sm:w-[360px] w-full">
             <Tilt
                 options={{ max: 20, scale: 1.02, speed: 400 }}
-                className='bg-white dark:bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full shadow-lg hover:shadow-2xl transition-shadow duration-300'
+                className="bg-white dark:bg-tertiary p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-[500px]"
             >
                 {/* Banner */}
-                <div className='relative w-full h-[200px] group overflow-hidden rounded-xl'>
+                <div className="relative w-full h-[180px] flex-shrink-0 group overflow-hidden rounded-xl">
                     <div className={`w-full h-full bg-gradient-to-br ${gradient} flex flex-col items-center justify-center gap-3 transition-transform duration-500 group-hover:scale-105`}>
-                        {/* Decorative circles */}
                         <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full bg-white/10" />
                         <div className="absolute -bottom-8 -left-8 w-36 h-36 rounded-full bg-white/10" />
-                        {/* Icon */}
                         <div className="relative z-10 bg-white/20 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
                             <Icon size={36} className="text-white drop-shadow" />
                         </div>
-                        {/* Name */}
                         <p className="relative z-10 text-white font-bold text-lg text-center px-4 drop-shadow-lg leading-tight">
                             {name}
                         </p>
                     </div>
+                </div>
 
-                    {/* Hover action buttons */}
-                    <div className='absolute inset-0 flex justify-end items-start m-3 gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                        <div
-                            onClick={() => window.open(source_code_link, "_blank")}
-                            className='bg-black/70 backdrop-blur-sm w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:bg-black transition-colors shadow-lg'
-                            title="View Source Code"
-                        >
-                            <FaGithub className='w-5 h-5 text-white' />
-                        </div>
-                        {live_demo_link && live_demo_link !== "#" && (
-                            <div
-                                onClick={() => window.open(live_demo_link, "_blank")}
-                                className='bg-violet-600/80 backdrop-blur-sm w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:bg-violet-600 transition-colors shadow-lg'
-                                title="Live Demo"
+                {/* Content — flex-1 so buttons are always at the bottom */}
+                <div className="mt-5 flex flex-col flex-1">
+                    <h3 className="text-gray-900 dark:text-white font-bold text-[20px]">{name}</h3>
+                    <p className="mt-2 text-secondary text-[13px] leading-relaxed flex-1">{description}</p>
+
+                    {/* Tags */}
+                    <div className="mt-4 flex flex-wrap gap-2">
+                        {tags.map((tag) => (
+                            <span
+                                key={`${name}-${tag.name}`}
+                                className={`text-[11px] font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${tag.color} text-white shadow-sm`}
                             >
-                                <FaExternalLinkAlt className='w-4 h-4 text-white' />
-                            </div>
-                        )}
+                                #{tag.name}
+                            </span>
+                        ))}
                     </div>
-                </div>
 
-                {/* Content */}
-                <div className='mt-5'>
-                    <h3 className='text-gray-900 dark:text-white font-bold text-[20px]'>{name}</h3>
-                    <p className='mt-2 text-secondary text-[13px] leading-relaxed'>{description}</p>
-                </div>
-
-                {/* Tags */}
-                <div className='mt-4 flex flex-wrap gap-2'>
-                    {tags.map((tag) => (
-                        <span
-                            key={`${name}-${tag.name}`}
-                            className={`text-[11px] font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${tag.color} text-white shadow-sm`}
+                    {/* Bottom Buttons */}
+                    <div className="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700 flex gap-3">
+                        <button
+                            onClick={() => window.open(source_code_link, "_blank")}
+                            className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gray-900 dark:bg-gray-800 hover:bg-black dark:hover:bg-gray-700 text-white text-[13px] font-semibold transition-all duration-200 shadow hover:shadow-md"
                         >
-                            #{tag.name}
-                        </span>
-                    ))}
-                </div>
-
-                {/* GitHub link button */}
-                <div className="mt-5 pt-4 border-t border-gray-100 dark:border-gray-700">
-                    <button
-                        onClick={() => window.open(source_code_link, "_blank")}
-                        className="flex items-center gap-2 text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors group/btn"
-                    >
-                        <FaGithub size={16} />
-                        <span className="group-hover/btn:underline">View on GitHub</span>
-                        <FaExternalLinkAlt size={11} className="ml-1 opacity-60" />
-                    </button>
+                            <FaGithub size={15} />
+                            Source Code
+                        </button>
+                        <button
+                            disabled
+                            title="Coming Soon"
+                            className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 text-[13px] font-semibold cursor-not-allowed opacity-60"
+                        >
+                            <FaExternalLinkAlt size={13} />
+                            Live Demo
+                        </button>
+                    </div>
                 </div>
             </Tilt>
         </motion.div>
     );
 };
+
 
 const Works = () => {
     return (
