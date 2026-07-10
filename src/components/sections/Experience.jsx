@@ -8,20 +8,20 @@ import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../../styles";
 import { SectionWrapper } from "../../hoc";
 import { textVariant } from "../../utils/motion";
-import { FaLaptopCode, FaMobileAlt, FaPencilRuler } from "react-icons/fa";
+import { FaLaptopCode, FaMobileAlt, FaPencilRuler, FaFileWord } from "react-icons/fa";
 
 const experiences = [
     {
-        title: "Senior UI/UX Designer",
-        company_name: "Creative Studio",
+        title: "UI/UX Designer",
+        company_name: "Freelance",
         icon: <FaPencilRuler size={24} />,
         iconBg: "#4F46E5",
         date: "Jan 2025 – Present",
         points: [
-            "Leading user research and usability testing to inform design decisions and improve product usability.",
+            "Conducting user research and usability testing to inform design decisions and improve product usability.",
             "Creating high-fidelity wireframes, prototypes, and UI designs using Figma and Adobe XD.",
-            "Collaborating with developers to ensure accurate implementation of designs and design systems.",
-            "Mentoring junior designers and establishing design best practices across the organization.",
+            "Delivering client-focused design solutions for various projects across different industries.",
+            "Maintaining consistent design systems and style guides for client brands.",
         ],
     },
     {
@@ -51,15 +51,15 @@ const experiences = [
         ],
     },
     {
-        title: "iOS App Developer",
-        company_name: "AppInnovate",
-        icon: <FaMobileAlt size={24} />,
-        iconBg: "#F59E0B",
+        title: "MS Office Specialist",
+        company_name: "Freelance",
+        icon: <FaFileWord size={24} />,
+        iconBg: "#2B579A",
         date: "Jun 2022 – Dec 2022",
         points: [
-            "Developed responsive and interactive mobile applications using React Native for iOS and Android.",
-            "Optimized application performance, reducing load times by 40% through code splitting and lazy loading.",
-            "Collaborated with backend teams to design efficient API schemas for mobile data consumption.",
+            "Created professional documents, reports, and presentations using Microsoft Word, Excel, and PowerPoint.",
+            "Designed structured spreadsheets with formulas, pivot tables, and charts for data analysis.",
+            "Prepared business proposals, brochures, and formal documentation for various clients.",
         ],
     },
 ];
