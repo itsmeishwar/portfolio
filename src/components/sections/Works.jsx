@@ -67,10 +67,10 @@ const projects = [
 
 const ProjectCard = ({ index, name, description, tags, gradient, icon: Icon, source_code_link }) => {
     return (
-        <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="sm:w-[360px] w-full">
+        <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="sm:w-[360px] w-full flex">
             <Tilt
                 options={{ max: 20, scale: 1.02, speed: 400 }}
-                className="bg-white dark:bg-tertiary p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-[500px]"
+                className="bg-white dark:bg-tertiary p-5 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full"
             >
                 {/* Banner */}
                 <div className="relative w-full h-[180px] flex-shrink-0 group overflow-hidden rounded-xl">
@@ -86,7 +86,7 @@ const ProjectCard = ({ index, name, description, tags, gradient, icon: Icon, sou
                     </div>
                 </div>
 
-                {/* Content — flex-1 so buttons are always at the bottom */}
+                {/* Content — flex-1 pushes buttons to bottom */}
                 <div className="mt-5 flex flex-col flex-1">
                     <h3 className="text-gray-900 dark:text-white font-bold text-[20px]">{name}</h3>
                     <p className="mt-2 text-secondary text-[13px] leading-relaxed flex-1">{description}</p>
@@ -147,7 +147,7 @@ const Works = () => {
                 </motion.p>
             </div>
 
-            <div className='mt-20 flex flex-wrap gap-7'>
+            <div className='mt-20 flex flex-wrap gap-7 items-stretch'>
                 {projects.map((project, index) => (
                     <ProjectCard key={`project-${index}`} index={index} {...project} />
                 ))}
