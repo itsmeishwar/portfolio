@@ -4,6 +4,7 @@ import Hero from '../components/sections/Hero';
 import About from '../components/sections/About';
 import Experience from '../components/sections/Experience';
 import Works from '../components/sections/Works';
+import Certificates from '../components/sections/Certificates';
 import BlogSection from '../components/sections/BlogSection';
 import Contact from '../components/sections/Contact';
 import StarsCanvas from '../components/canvas/Stars';
@@ -20,6 +21,7 @@ const LandingPage = () => {
             <About />
             <Experience />
             <Works />
+            <Certificates />
             <BlogSection />
             <Contact />
             <StarsCanvas />
