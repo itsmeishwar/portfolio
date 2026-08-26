@@ -58,7 +58,7 @@ const About = () => {
                 variants={fadeIn("", "", 0.1, 1)}
                 className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
             >
-                I am a creative UI/UX Designer and Developer with a passion for building beautiful, functional interfaces. I specialize in Frontend Web Development and Mobile App creation, translating complex requirements into intuitive, engaging user experiences. With expertise in React, React Native, and modern design principles, I ensure every pixel serves a purpose and every interaction feels seamless.
+                UI/UX Designer and Front-End Developer with hands-on experience in Figma, HTML, CSS, JavaScript, and React JS. Skilled in wireframing, prototyping, and responsive design, with strong problem-solving ability and a passion for building clean, user-centered digital products. Seeking a challenging assignment to put these skills to the best use, contribute as a strong team player, and make a distinguished contribution in the field of digital product design.
             </motion.p>
 
             {/* Stats Counter */}

@@ -8,7 +8,7 @@ const Hero = () => {
     const [isDeleting, setIsDeleting] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
     const [delta, setDelta] = useState(300 - Math.random() * 100);
-    const toRotate = ["Full Stack Developer", "Creative Problem Solver", "UI/UX Enthusiast", "Tech Innovator"];
+    const toRotate = ["UI/UX Designer", "Front-End Developer", "Figma Expert", "React Developer"];
     const period = 2000;
 
     useEffect(() => {
@@ -100,8 +100,7 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.9 }}
                         className="text-gray-600 dark:text-secondary text-sm sm:text-base max-w-xl mx-auto lg:mx-0 mb-8"
                     >
-                        Crafting exceptional digital experiences with modern web technologies.
-                        Passionate about clean code, innovative solutions, and user-centric design.
+                        Designing clean, user-centered digital products with Figma, HTML, CSS, JavaScript, and React JS. Passionate about creating responsive, interactive, and beautiful interfaces.
                     </motion.p>
 
                     {/* CTA Buttons */}
