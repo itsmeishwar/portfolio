@@ -7,24 +7,26 @@ import { FaTimes, FaSearchPlus } from "react-icons/fa";
 
 const certificates = [
     {
-        title: "AWS Training",
-        provider: "ACEM with Prixa Academy",
-        duration: "July 1, 2025 - July 31, 2025",
-        description: "Hands-on practice on Amazon Web Service(AWS) cloud technology. Learnt to design, set up and manage cloud based solution.",
-        image: "/aws_certificate.jpg",
+        title: "Diploma in Office Management",
+        provider: "Kirtipur Valley Institute — Department of Computer Technologies",
+        duration: "2079-02-06 to 2079-05-10 (BS) | Date of Issue: 2079-08-12 (BS)",
+        description: "Successfully completed the Diploma in Office Management covering Computer Fundamentals, Nepali/English Typing, Microsoft Office (Word, Excel, PowerPoint, Access), Adobe Pagemaker, Adobe Photoshop, and E-mail & Internet.",
+        image: "/kirtipur_certificate.jpg",
         type: "Certificate",
+        orientation: "portrait",
     },
     {
-        title: "Git & GitHub",
-        provider: "BCA Club of Advanced College of Engineering and Management",
-        duration: "January 12, 2026 - January 14, 2026",
-        description: "Hands-on practice on Git and GitHub. Learnt the fundamentals of version control and collaborative development.",
+        title: "Git & GitHub Workshop",
+        provider: "BCA Club of Etech Spark (BCES) with Advanced College of Engineering & Management (ACEM)",
+        duration: "January 14 to 16, 2026",
+        description: "Participated and completed the Git & GitHub Workshop — achieving hands-on experience in version control, collaborative development, and repository management using Git & GitHub.",
         image: "/git_github_certificate.jpg",
         type: "Certificate",
-    }
+        orientation: "landscape",
+    },
 ];
 
-const CertificateCard = ({ index, title, provider, duration, description, image, type, onImageClick }) => {
+const CertificateCard = ({ index, title, provider, duration, description, image, type, orientation, onImageClick }) => {
     return (
         <motion.div
             variants={fadeIn("up", "spring", index * 0.5, 0.75)}
@@ -64,13 +66,17 @@ const CertificateCard = ({ index, title, provider, duration, description, image,
             {/* Certificate Preview Image */}
             {image && (
                 <div 
-                    onClick={() => onImageClick(image, title)}
-                    className="relative mt-auto w-full h-52 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 cursor-pointer group/img shadow-sm"
+                    onClick={() => onImageClick(image, title, orientation)}
+                    className={`relative mt-auto w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 cursor-pointer group/img shadow-sm ${
+                        orientation === "portrait" ? "h-80" : "h-52"
+                    }`}
                 >
                     <img 
                         src={image} 
                         alt={`${title} Certificate`} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                        className={`w-full h-full transition-transform duration-500 group-hover/img:scale-105 ${
+                            orientation === "portrait" ? "object-contain bg-gray-50 dark:bg-gray-900" : "object-cover"
+                        }`}
                     />
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity duration-300">
@@ -87,10 +93,12 @@ const CertificateCard = ({ index, title, provider, duration, description, image,
 const Certificates = () => {
     const [selectedImg, setSelectedImg] = useState(null);
     const [selectedTitle, setSelectedTitle] = useState("");
+    const [selectedOrientation, setSelectedOrientation] = useState("landscape");
 
-    const handleImageClick = (img, title) => {
+    const handleImageClick = (img, title, orientation) => {
         setSelectedImg(img);
         setSelectedTitle(title);
+        setSelectedOrientation(orientation);
     };
 
     return (
@@ -122,7 +130,11 @@ const Certificates = () => {
                     onClick={() => setSelectedImg(null)}
                 >
                     <div 
-                        className="relative max-w-4xl max-h-[85vh] w-full flex flex-col items-center cursor-default"
+                        className={`relative flex flex-col items-center cursor-default ${
+                            selectedOrientation === "portrait"
+                                ? "max-w-lg w-full max-h-[90vh]"
+                                : "max-w-4xl w-full max-h-[85vh]"
+                        }`}
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Close button */}
@@ -138,7 +150,11 @@ const Certificates = () => {
                         <img 
                             src={selectedImg} 
                             alt={`${selectedTitle} Certificate`}
-                            className="w-full max-h-[75vh] object-contain rounded-lg shadow-2xl border border-white/10"
+                            className={`rounded-lg shadow-2xl border border-white/10 ${
+                                selectedOrientation === "portrait"
+                                    ? "max-h-[80vh] w-auto object-contain"
+                                    : "w-full max-h-[75vh] object-contain"
+                            }`}
                         />
                         
                         {/* Caption */}
