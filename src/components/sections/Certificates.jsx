@@ -65,18 +65,14 @@ const CertificateCard = ({ index, title, provider, duration, description, image,
 
             {/* Certificate Preview Image */}
             {image && (
-                <div 
+                <div
                     onClick={() => onImageClick(image, title, orientation)}
-                    className={`relative mt-auto w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 cursor-pointer group/img shadow-sm ${
-                        orientation === "portrait" ? "h-80" : "h-52"
-                    }`}
+                    className="relative mt-auto w-full h-72 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 cursor-pointer group/img shadow-sm bg-gray-50 dark:bg-gray-900"
                 >
-                    <img 
-                        src={image} 
-                        alt={`${title} Certificate`} 
-                        className={`w-full h-full transition-transform duration-500 group-hover/img:scale-105 ${
-                            orientation === "portrait" ? "object-contain bg-gray-50 dark:bg-gray-900" : "object-cover"
-                        }`}
+                    <img
+                        src={image}
+                        alt={`${title} Certificate`}
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover/img:scale-105"
                     />
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity duration-300">
