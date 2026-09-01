@@ -141,6 +141,8 @@
   justify-content: center !important;
   align-items: center !important;
   overflow: hidden !important;
+  text-align: center !important;
+  position: absolute !important;
 }
 
 /* Remove stray margin/padding from icon children */
@@ -152,6 +154,20 @@
   height: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.vertical-timeline-element-icon svg {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  margin: 0 !important;
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  color: #ffffff !important;
+  transform: none !important;
 }
 
 /* Content card text colour in light mode */
