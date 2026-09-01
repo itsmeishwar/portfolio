@@ -18,7 +18,7 @@ const SocialLinks = ({ className = "" }) => {
         {
             name: 'Twitter',
             icon: FaTwitter,
-            url: 'https://twitter.com/IshwarAwasthi',
+            url: 'https://x.com/ishwar_awa26209',
             color: 'hover:text-[#1DA1F2]'
         },
         {
