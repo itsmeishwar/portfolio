@@ -13,7 +13,7 @@ const BlogPage = () => {
     return (
         <div className='bg-primary min-h-screen relative z-0'>
             <div className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
-                <Link to="/" className="inline-flex items-center gap-2 text-secondary hover:text-white mb-8 transition-colors">
+                <Link to="/" className="inline-flex items-center gap-2 text-secondary hover:text-gray-900 dark:hover:text-white mb-8 transition-colors">
                     <FaArrowLeft /> Back to Home
                 </Link>
 
@@ -43,7 +43,7 @@ const BlogPage = () => {
                                 <span className="text-secondary text-sm">{post.date}</span>
                             </div>
 
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-violet-400 transition-colors">
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-violet-400 transition-colors">
                                 {post.title}
                             </h3>
 
@@ -55,7 +55,7 @@ const BlogPage = () => {
                                 <span className="text-secondary text-sm">{post.readTime}</span>
                                 <Link
                                     to={`/blog/${post.id}`}
-                                    className="text-white hover:text-violet-400 transition-colors flex items-center gap-2"
+                                    className="text-gray-900 dark:text-white hover:text-violet-400 transition-colors flex items-center gap-2"
                                 >
                                     Read Article
                                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

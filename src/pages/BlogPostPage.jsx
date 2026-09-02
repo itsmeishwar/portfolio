@@ -23,7 +23,7 @@ const BlogPostPage = () => {
             <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-violet-900/20 to-primary/0 pointer-events-none" />
 
             <div className={`${styles.padding} max-w-4xl mx-auto relative z-10`}>
-                <Link to="/blog" className="inline-flex items-center gap-2 text-secondary hover:text-white mb-8 transition-colors">
+                <Link to="/blog" className="inline-flex items-center gap-2 text-secondary hover:text-gray-900 dark:hover:text-white mb-8 transition-colors">
                     <FaArrowLeft /> Back to Blog
                 </Link>
 
@@ -55,7 +55,7 @@ const BlogPostPage = () => {
                 </motion.article>
 
                 <div className="mt-16 pt-8 border-t border-white/10">
-                    <h3 className="text-white text-xl font-bold mb-6">Read Next</h3>
+                    <h3 className="text-gray-900 dark:text-white text-xl font-bold mb-6">Read Next</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {blogPosts
                             .filter(p => p.id !== post.id)
@@ -63,7 +63,7 @@ const BlogPostPage = () => {
                             .map(relatedPost => (
                                 <Link key={relatedPost.id} to={`/blog/${relatedPost.id}`} className="block group">
                                     <div className="bg-tertiary rounded-xl p-5 border border-white/5 hover:border-violet-500/30 transition-all">
-                                        <h4 className="text-white font-bold group-hover:text-violet-400 transition-colors mb-2">{relatedPost.title}</h4>
+                                        <h4 className="text-gray-900 dark:text-white font-bold group-hover:text-violet-400 transition-colors mb-2">{relatedPost.title}</h4>
                                         <p className="text-secondary text-sm line-clamp-2">{relatedPost.excerpt}</p>
                                     </div>
                                 </Link>
