@@ -4,6 +4,7 @@ import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
 const SocialLinks = ({ className = "" }) => {
     const socialLinks = [
         {
+            // LinkedIn
             name: 'LinkedIn',
             icon: FaLinkedin,
             url: 'https://www.linkedin.com/in/ishwar-awasthi-073606264/',
