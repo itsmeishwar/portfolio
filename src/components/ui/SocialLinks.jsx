@@ -11,7 +11,6 @@ const SocialLinks = ({ className = "" }) => {
             color: 'hover:text-[#0077b5]'
         },
         {
-            // GitHub
             name: 'GitHub',
             icon: FaGithub,
             url: 'https://github.com/itsmeishwar',
