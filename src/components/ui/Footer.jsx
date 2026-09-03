@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHeart, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import SocialLinks from "./SocialLinks";
 
 const Footer = () => {
@@ -111,9 +111,6 @@ const Footer = () => {
                         Made by Ishwar Awasthi
                     </div>
 
-                    <div className="text-secondary text-[12px] text-center md:text-right">
-                        Design & Built with React & Tailwind CSS
-                    </div>
                 </div>
             </div>
         </footer>
