@@ -27,7 +27,7 @@ const Footer = () => {
                     {/* Section 1: Brand & About */}
                     <div className="flex flex-col gap-4">
                         <div>
-                            <h3 className="text-white text-xl font-bold mb-2">Ishwar Awasthi</h3>
+                            <h3 className="text-gray-900 dark:text-white text-xl font-bold mb-2">Ishwar Awasthi</h3>
                             <p className="text-secondary text-[14px] leading-relaxed">
                                 Full Stack Developer & Creative Problem Solver. Building beautiful, functional digital experiences with modern web technologies.
                             </p>
@@ -47,7 +47,7 @@ const Footer = () => {
                     {/* Section 2: Quick Links & Services */}
                     <div className="flex flex-col gap-4">
                         <div>
-                            <h3 className="text-white text-lg font-semibold mb-3">Quick Links</h3>
+                            <h3 className="text-gray-900 dark:text-white text-lg font-semibold mb-3">Quick Links</h3>
                             <ul className="flex flex-col gap-2">
                                 {quickLinks.map((link) => (
                                     <li key={link.name}>
@@ -63,7 +63,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div>
-                            <h3 className="text-white text-sm font-semibold mt-4 mb-2">Services</h3>
+                            <h3 className="text-gray-900 dark:text-white text-sm font-semibold mt-4 mb-2">Services</h3>
                             <div className="grid grid-cols-2 gap-2">
                                 {services.map((service) => (
                                     <div
@@ -81,7 +81,7 @@ const Footer = () => {
                     {/* Section 3: Social Links & CTA */}
                     <div className="flex flex-col gap-4">
                         <div>
-                            <h3 className="text-white text-lg font-semibold mb-3">Connect With Me</h3>
+                            <h3 className="text-gray-900 dark:text-white text-lg font-semibold mb-3">Connect With Me</h3>
                             <p className="text-secondary text-[14px] mb-4">
                                 Let's collaborate and create something amazing together.
                             </p>
@@ -104,7 +104,7 @@ const Footer = () => {
                 {/* Bottom Footer */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="text-secondary text-[13px] text-center md:text-left">
-                        &copy; {currentYear} <span className="text-white font-semibold">Ishwar Awasthi</span>. All rights reserved.
+                        &copy; {currentYear} <span className="text-gray-900 dark:text-white font-semibold">Ishwar Awasthi</span>. All rights reserved.
                     </div>
 
                     <div className="flex items-center gap-2 text-secondary text-[13px]">
